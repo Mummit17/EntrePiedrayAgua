@@ -1,112 +1,11 @@
-/*html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
 body {
-  margin-bottom: 60px;
-}*/
-/*body {
     font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4e9d9;
-    color: #4B3B2A;
-    line-height: 1.6;
-}
-
-header {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #8C7961;
-    background-color: #6b3324;
-    color: #F4EFEA;
-}
-
-    header h1 {
-        font-size: 2.5em;
-        margin: 0;
-    }
-
-nav {
-    margin: 10px 0;
-}
-
-    nav a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #726250;
-        font-size: 1em;
-    }
-
-        nav a:hover {
-            color: #8C7961;
-        }
-
-.container {
-    max-width: 900px;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.post {
-    background: #6b3324;
-    border: 1px solid #8C7961;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-    .post h2 {
-        font-size: 1.5em;
-        margin: 0 0 10px;
-        color: #f4e9d9;
-    }
-
-    .post p {
-        font-size: 0.9em;
-        margin: 0 0 10px;
-        color: #f4e9d9;
-    }
-
-    .post a {
-        text-decoration: none;
-        color: #f4e9d9;
-        font-weight: bold;
-    }
-
-        .post a:hover {
-            text-decoration: underline;
-            color: #f4e9d9;
-        }
-
-footer {
-    text-align: center;
-    margin: 30px 0;
-    font-size: 0.9em;
-    color: #5A4633;
-}*/
-
-body {
-    font-family: 'Georgia', serif;
-    margin: 0;
     padding: 0;
     background-color: #F4EFEA;
     color: #4B3B2A;
@@ -144,18 +43,37 @@ nav {
 .container {
     max-width: 900px;
     margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
     padding: 0 20px;
+    height: calc(90vh - 90px);
+    display: flex;
+    flex-direction: column;
 }
 
+.contenido {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+    .contenido::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .contenido::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .contenido::-webkit-scrollbar-thumb {
+        background-color: #8C7961;
+        border-radius: 10px;
+    }
+
 .post {
-    /*    background: #DED3C2;*/
     background: #fff;
     border: 1px solid #8C7961;
     border-radius: 8px;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -163,11 +81,13 @@ nav {
         font-size: 1.5em;
         margin: 0 0 10px;
         color: #6f9141;
+        text-align: center;
     }
 
     .post p {
         font-size: 0.9em;
         margin: 0 0 10px;
+        text-align: justify;
     }
 
     .post a {
@@ -186,4 +106,91 @@ footer {
     margin: 30px 0;
     font-size: 0.9em;
     color: #5A4633;
+}
+
+.seccion {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.contacto {
+    margin-top: 40px;
+}
+
+
+
+
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.post {
+    background: #fff;
+    border: 1px solid #8C7961;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .post:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+/* estructura interna */
+.post-header {
+    margin-bottom: 15px;
+}
+
+.post-title {
+    font-size: 1.4em;
+    color: #6f9141;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.post-body {
+    font-size: 0.95em;
+    text-align: justify;
+}
+
+.post-image {
+    text-align: center;
+    margin: 15px 0;
+}
+
+    .post-image img {
+        max-width: 220px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+.post-footer {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* botones tipo link */
+.post-link {
+    text-decoration: none;
+    color: #726250;
+    font-weight: bold;
+}
+
+    .post-link:hover {
+        color: #6b3324;
+    }
+
+/* secciones */
+.seccion {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.contacto {
+    margin-top: 50px;
 }
